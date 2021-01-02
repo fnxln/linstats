@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { Router, Route, Link } from "react-router-dom";
+import NavbarElement from './componets/Navbar';
+import { createBrowserHistory } from 'history';
+import Home from './pages/home/Home';
+import Sobre from './pages/sobre/Sobre';
+const history = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Router history={history}>
+            <div>
+                <NavbarElement />
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={Sobre} />
+            </div>
+        </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
