@@ -5,6 +5,7 @@ import NavbarElement from './componets/Navbar';
 import { createBrowserHistory } from 'history';
 import Home from './pages/home/Home';
 import Sobre from './pages/sobre/Sobre';
+import './index.scss'
 const history = createBrowserHistory();
 
 ReactDOM.render(
